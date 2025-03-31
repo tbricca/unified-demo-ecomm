@@ -7,6 +7,11 @@ import { Button } from "./components/ui/button";
 import CloudinaryImage from "./components/Blocks/CloudinaryImage";
 import { Collection } from "./components/Collection/Collection";
 import Counter from "./components/Counter/Counter";
+import { DeluxeAction } from "./components/deluxe/DeluxeAction";
+import DeluxeInputDropdown from "./components/deluxe/DeluxeInputDropdown";
+import DeluxeTable from "./components/deluxe/DeluxeTable";
+import DeluxeTableFilters from "./components/deluxe/DeluxeTableFilters";
+import DeluxeValueInput from "./components/deluxe/DeluxeValueInput";
 import Dialog from "./components/Dialog";
 import HeroWithChildren from "./components/Hero/HeroWithChildren";
 import IconCard from "./components/Card/IconCard";
@@ -14,6 +19,7 @@ import ImageHero from "./components/Hero/ImageHero";
 import JournalCard from "./components/JournalCard/JournalCard";
 import ProductCard from "./components/Card/ProductCard";
 import { ProductGridCard } from "./components/Card/ProductGridCard";
+import SearchBox from "./components/deluxe/SearchBox";
 import SplitHero from "./components/Hero/SplitHero";
 import TestimonialCard from "./components/Card/TestimonialCard";
 import TextHero from "./components/Hero/TextHero";
@@ -680,6 +686,182 @@ Builder.registerComponent(JournalCard, {
     {
       name: "title",
       type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(withChildren(SearchBox), {
+  name: "SearchBox",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+    },
+    {
+      name: "searchIconUrl",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(withChildren(DeluxeInputDropdown), {
+  name: "DeluxeInputDropdown",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "containerClassName",
+      type: "string",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+    },
+    {
+      name: "error",
+      type: "string",
+    },
+    {
+      name: "label",
+      type: "string",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+    },
+    {
+      name: "required",
+      type: "boolean",
+    },
+    {
+      name: "value",
+      type: "string",
+    },
+    {
+      name: "variant",
+      type: "string",
+      enum: ["neutral", "success"],
+    },
+  ],
+});
+
+Builder.registerComponent(DeluxeTableFilters, {
+  name: "DeluxeTableFilters",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "numberOfFilters",
+      type: "number",
+    },
+  ],
+});
+
+Builder.registerComponent(withChildren(DeluxeValueInput), {
+  name: "DeluxeValueInput",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "containerClassName",
+      type: "string",
+    },
+  ],
+});
+
+Builder.registerComponent(withChildren(DeluxeAction), {
+  name: "DeluxeAction",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "label",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "showLeftIcon",
+      type: "boolean",
+      defaultValue: true,
+    },
+    {
+      name: "showRightIcon",
+      type: "boolean",
+      defaultValue: false,
+    },
+    {
+      name: "leftIcon",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "rightIcon",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+  ],
+});
+
+Builder.registerComponent(DeluxeTable, {
+  name: "DeluxeTable",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "rows",
+      type: "object",
+      hideFromUI: true,
+      meta: {
+        ts: "DeluxeTableRow[]",
+      },
     },
   ],
 });
