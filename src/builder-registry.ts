@@ -11,6 +11,7 @@ import { DeluxeAction } from "./components/deluxe/DeluxeAction";
 import DeluxeInputDropdown from "./components/deluxe/DeluxeInputDropdown";
 import DeluxeTable from "./components/deluxe/DeluxeTable";
 import DeluxeTableFilters from "./components/deluxe/DeluxeTableFilters";
+import { DeluxeTertiaryButton } from "./components/deluxe/DeluxeTertiaryButton";
 import DeluxeValueInput from "./components/deluxe/DeluxeValueInput";
 import Dialog from "./components/Dialog";
 import HeroWithChildren from "./components/Hero/HeroWithChildren";
@@ -312,9 +313,7 @@ Builder.registerComponent(TextHero, {
 const isProd =
   process.env.NEXT_PUBLIC_BUILDER_API_KEY! ===
   "a87584e551b6472fa0f0a2eb10f2c0ff";
-const defaultProductID = `${
-  isProd ? "" : process.env.NEXT_PUBLIC_BUILDER_API_KEY! + "_"
-}b0196147be5d4e6388bbdff62ee3ae7d`;
+const defaultProductID = `${isProd ? "" : process.env.NEXT_PUBLIC_BUILDER_API_KEY! + "_"}b0196147be5d4e6388bbdff62ee3ae7d`;
 
 Builder.registerComponent(ProductCard, {
   name: "ProductCard",
@@ -862,6 +861,49 @@ Builder.registerComponent(DeluxeTable, {
       meta: {
         ts: "DeluxeTableRow[]",
       },
+    },
+  ],
+});
+
+Builder.registerComponent(withChildren(DeluxeTertiaryButton), {
+  name: "DeluxeTertiaryButton",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "label",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "leftIcon",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "rightIcon",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
+    },
+    {
+      name: "showLeftIcon",
+      type: "boolean",
+    },
+    {
+      name: "showRightIcon",
+      type: "boolean",
     },
   ],
 });

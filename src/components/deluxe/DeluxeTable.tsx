@@ -83,6 +83,9 @@ const DeluxeTable: React.FC<DeluxeTableProps> = ({
                 Column label
               </div>
               <div className="flex-1 text-sm leading-5 text-gray-900">
+                Notes
+              </div>
+              <div className="flex-1 text-sm leading-5 text-gray-900">
                 Column label
               </div>
               <div className="flex-1 text-sm leading-5 text-gray-900">
@@ -116,6 +119,12 @@ const DeluxeTable: React.FC<DeluxeTableProps> = ({
                     <DeluxeValueInput
                       containerClassName="max-w-full"
                       placeholder="Enter value..."
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <DeluxeValueInput
+                      containerClassName="max-w-full"
+                      placeholder="Add notes..."
                     />
                   </div>
                   <div className="flex-1">

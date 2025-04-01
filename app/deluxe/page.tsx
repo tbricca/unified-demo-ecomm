@@ -2,6 +2,10 @@
 
 import DeluxeTable from "@/src/components/deluxe/DeluxeTable";
 import { DeluxeAction } from "@/src/components/deluxe/DeluxeAction";
+import {
+  DeluxeTertiaryButton,
+  deluxeIcons,
+} from "@/src/components/deluxe/DeluxeTertiaryButton";
 
 export default function DeluxePage() {
   const handleRowSelect = (selectedIds: string[]) => {
@@ -29,6 +33,65 @@ export default function DeluxePage() {
       <h1 className="text-3xl font-bold mb-8">Deluxe Components Preview</h1>
 
       <div className="space-y-12">
+        <section>
+          <h2 className="text-xl font-semibold mb-6">
+            Deluxe Tertiary Button Examples
+          </h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-medium mb-4">Default Button Group</h3>
+              <div className="inline-flex gap-6 justify-end items-center h-10 max-md:flex-wrap max-md:gap-4 max-sm:flex-col max-sm:gap-3 max-sm:items-start max-sm:h-auto">
+                <DeluxeTertiaryButton
+                  label="Action"
+                  leftIcon={<deluxeIcons.view />}
+                  rightIcon={<deluxeIcons.chevron />}
+                />
+                <DeluxeTertiaryButton
+                  label="Action"
+                  leftIcon={<deluxeIcons.download />}
+                  showRightIcon={false}
+                />
+                <DeluxeTertiaryButton
+                  label="Action"
+                  leftIcon={<deluxeIcons.edit />}
+                  showRightIcon={false}
+                />
+                <DeluxeTertiaryButton
+                  label="Action"
+                  leftIcon={<deluxeIcons.delete />}
+                  showRightIcon={false}
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium mb-4">Icon Variations</h3>
+              <div className="space-y-4">
+                <DeluxeTertiaryButton
+                  label="Both Icons"
+                  leftIcon={<deluxeIcons.view />}
+                  rightIcon={<deluxeIcons.chevron />}
+                />
+                <DeluxeTertiaryButton
+                  label="Left Icon Only"
+                  leftIcon={<deluxeIcons.download />}
+                  showRightIcon={false}
+                />
+                <DeluxeTertiaryButton
+                  label="Right Icon Only"
+                  rightIcon={<deluxeIcons.chevron />}
+                  showLeftIcon={false}
+                />
+                <DeluxeTertiaryButton
+                  label="No Icons"
+                  showLeftIcon={false}
+                  showRightIcon={false}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section>
           <h2 className="text-xl font-semibold mb-6">Deluxe Action Examples</h2>
           <div className="space-y-6">
@@ -75,16 +138,12 @@ export default function DeluxePage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium mb-4">Icon Visibility Controls</h3>
+              <h3 className="text-lg font-medium mb-4">
+                Icon Visibility Controls
+              </h3>
               <div className="space-y-4">
-                <DeluxeAction
-                  label="No Left Icon"
-                  showLeftIcon={false}
-                />
-                <DeluxeAction
-                  label="No Right Icon"
-                  showRightIcon={false}
-                />
+                <DeluxeAction label="No Left Icon" showLeftIcon={false} />
+                <DeluxeAction label="No Right Icon" showRightIcon={false} />
                 <DeluxeAction
                   label="Text Only"
                   showLeftIcon={false}
@@ -112,7 +171,9 @@ export default function DeluxePage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium mb-4">No Icons (Old Method)</h3>
+              <h3 className="text-lg font-medium mb-4">
+                No Icons (Old Method)
+              </h3>
               <DeluxeAction
                 label="Text Only (Legacy)"
                 leftIcon={null}

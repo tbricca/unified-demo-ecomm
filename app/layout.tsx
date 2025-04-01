@@ -32,9 +32,9 @@ export default async function RootLayout({
         <QueryProvider>
           <main>
             {bannerContent && <RenderBuilderContent model="banner" content={bannerContent} data={{username: "superUser123"}} />}
-            {/* <Header headerContent={headerContent} /> */}
+            <Header headerContent={headerContent} />
             <div className="container">{children}</div>
-            {/* <Footer /> */}
+            <Footer />
           </main>
         </QueryProvider>
       </body>
