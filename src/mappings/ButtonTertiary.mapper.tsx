@@ -27,6 +27,7 @@ export default figmaMapping({
         rightIcon={figma["Right icon"]}
         showLeftIcon={figma["Show left icon"]}
         showRightIcon={figma["Show right icon"]}
+        // showLeftIcon={figma}
       />
     );
   },

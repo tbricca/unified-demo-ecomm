@@ -18,6 +18,7 @@ import HeroWithChildren from "./components/Hero/HeroWithChildren";
 import IconCard from "./components/Card/IconCard";
 import ImageHero from "./components/Hero/ImageHero";
 import JournalCard from "./components/JournalCard/JournalCard";
+import MaverikCard from "./Maverik/card";
 import ProductCard from "./components/Card/ProductCard";
 import { ProductGridCard } from "./components/Card/ProductGridCard";
 import SearchBox from "./components/deluxe/SearchBox";
@@ -25,6 +26,7 @@ import SplitHero from "./components/Hero/SplitHero";
 import TestimonialCard from "./components/Card/TestimonialCard";
 import TextHero from "./components/Hero/TextHero";
 import UpsellPopup from "./components/Popup/UpsellPopup";
+import VideoHero from "./components/Hero/VideoHero";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
@@ -86,6 +88,7 @@ Builder.register("insertMenu", {
   items: [
     { name: "TextHero" },
     { name: "ImageHero" },
+    { name: "VideoHero" },
     { name: "SplitHero" },
     { name: "HeroWithChildren" },
   ],
@@ -313,7 +316,9 @@ Builder.registerComponent(TextHero, {
 const isProd =
   process.env.NEXT_PUBLIC_BUILDER_API_KEY! ===
   "a87584e551b6472fa0f0a2eb10f2c0ff";
-const defaultProductID = `${isProd ? "" : process.env.NEXT_PUBLIC_BUILDER_API_KEY! + "_"}b0196147be5d4e6388bbdff62ee3ae7d`;
+const defaultProductID = `${
+  isProd ? "" : process.env.NEXT_PUBLIC_BUILDER_API_KEY! + "_"
+}b0196147be5d4e6388bbdff62ee3ae7d`;
 
 Builder.registerComponent(ProductCard, {
   name: "ProductCard",
@@ -394,6 +399,55 @@ Builder.registerComponent(ImageHero, {
       required: true,
       defaultValue:
         "https://cdn.builder.io/api/v1/image/assets%2Fa87584e551b6472fa0f0a2eb10f2c0ff%2F61c4f304ac9448b1ad741b83de17e48a",
+    },
+    {
+      name: "buttonLink",
+      type: "url",
+      required: true,
+      defaultValue: "/",
+    },
+    {
+      name: "buttonText",
+      type: "string",
+      required: true,
+      defaultValue: "Shop Now",
+    },
+    {
+      name: "subTitle",
+      type: "richText",
+      defaultValue: "<p>Shoppable essentials for your every day life.</p>",
+    },
+    {
+      name: "makeFullBleed",
+      type: "boolean",
+      defaultValue: false,
+    },
+  ],
+});
+
+Builder.registerComponent(VideoHero, {
+  name: "VideoHero",
+  image:
+    "https://cdn.builder.io/api/v1/image/assets%2Fa87584e551b6472fa0f0a2eb10f2c0ff%2F1da6aa719e0648b481ccd964186a4bcb", // You may want to update this to a video icon
+  inputs: [
+    {
+      name: "title",
+      type: "string",
+      required: true,
+      defaultValue: "SHOP ESSENTIALS",
+    },
+    {
+      name: "alignment",
+      type: "string",
+      enum: ["center", "left", "right"],
+      required: true,
+      defaultValue: "center",
+    },
+    {
+      name: "videoUrl",
+      type: "string",
+      required: true,
+      defaultValue: "https://breville.scene7.com/is/content/brevilleprod/Beanz_by_Breville_looping_homepage_video_US_option_1_2.8MB",
     },
     {
       name: "buttonLink",
@@ -904,6 +958,31 @@ Builder.registerComponent(withChildren(DeluxeTertiaryButton), {
     {
       name: "showRightIcon",
       type: "boolean",
+    },
+  ],
+});
+
+Builder.registerComponent(MaverikCard, {
+  name: "MaverikCard",
+  inputs: [
+    {
+      name: "color",
+      type: "string",
+    },
+    {
+      name: "image",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "price",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "title",
+      type: "string",
+      required: true,
     },
   ],
 });

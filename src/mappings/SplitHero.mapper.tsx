@@ -1,5 +1,5 @@
 import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
-import SplitHero from "@/components/Hero/SplitHero";
+import SplitHero from "@/src/components/Hero/SplitHero";
 
 // ❖ SplitHero
 interface FigmaSplitHeroProps extends BaseFigmaProps {
@@ -17,7 +17,7 @@ figmaMapping({
       <SplitHero
         imageAlignment="right"
         textAlignment="left"
-        splitWidth="1/2"
+        splitWidth="1/3"
         title={figma.Title ?? ""}
         subTitle={figma.Subtitle ?? ""}
         image={figma.imageUrl ?? ""}
