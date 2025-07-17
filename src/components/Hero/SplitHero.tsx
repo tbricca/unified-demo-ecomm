@@ -35,7 +35,7 @@ const SplitHero: React.FC<SplitHeroProps> = ({ imageAlignment, splitWidth, textA
             <span className="mt-3 text-xl leading-8" dangerouslySetInnerHTML={{ __html: subTitle }}></span>
           </div>
           {hasCTA &&
-            <Button variant="destructive" className="self-start px-5 py-2.5 mt-2 text-base tracking-[3.15px] max-md:mt-10" asChild>
+            <Button variant="outline" className="self-start px-5 py-2.5 mt-2 text-base tracking-[3.15px] max-md:mt-10 border-black text-black bg-transparent hover:bg-black hover:text-white" asChild>
               <Link href={buttonLink}>{buttonText}</Link>
             </Button>
           }

@@ -46,7 +46,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
             <div className="mt-2 text-xl leading-9 max-md:max-w-full" dangerouslySetInnerHTML={{ __html: subTitle || "" }}>
             </div>
           </div>
-          <Button className="flex flex-col justify-center mt-8 max-w-full w-[134px]" variant="secondary" size="lg" asChild>
+          <Button variant="white" className="self-start px-5 py-2.5 mt-2 text-base tracking-[3.15px] max-md:mt-10" asChild>
             <Link href={buttonLink}>{buttonText}</Link>
           </Button>
         </div>
@@ -55,4 +55,4 @@ const VideoHero: React.FC<VideoHeroProps> = ({
   );
 };
 
-export default VideoHero; 
+export default VideoHero;

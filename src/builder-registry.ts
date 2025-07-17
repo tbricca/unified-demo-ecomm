@@ -46,6 +46,7 @@ Builder.register("editor.settings", {
       { name: "Text Muted", value: "var(--color-muted, #e2e8f0)" },
       { name: "Dark Blue", value: "var(--color-muted,rgb(5, 35, 74))" },
       { name: "Dark Grey", value: "var(--color-muted,rgb(49, 52, 56))" },
+      { name: "Cream", value: "var(--color-muted, rgb(247, 243, 236))" },
       {
         name: "Background Light",
         value: "var(--color-background-light, #FAFAFA)",
